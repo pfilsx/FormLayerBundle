@@ -1,0 +1,21 @@
+framework:
+  trusted_hosts: ~
+  secret: "test"
+  csrf_protection: false
+  test: ~
+  router:
+    resource: "%kernel.project_dir%/tests/app/config/routing.yml"
+maker:
+  root_namespace: Pfilsx\FormLayer\Tests\app
+doctrine:
+  dbal:
+    driver:   'pdo_sqlite'
+    memory:   true
+  orm:
+    entity_managers:
+      default:
+        mappings:
+          Pfilsx\FormLayer\Tests\app\Entity\Node:
+            type: xml
+            dir: "%kernel.project_dir%/tests/app/Resources/config/doctrine"
+            prefix: Pfilsx\FormLayer\Tests\app\Entity
