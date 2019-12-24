@@ -35,6 +35,7 @@ class EntityFormLayerTest extends TestCase
         $this->assertInstanceOf($entityClass, $node);
         $this->assertEquals(new DateTime('01.01.1970'), $useMethod ? $node->getCreatedAt() : $node->createdAt);
     }
+
     /**
      * @dataProvider getLayers
      * @param string $formLayerClass
@@ -50,6 +51,7 @@ class EntityFormLayerTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $layer->load($node);
     }
+
     /**
      * @dataProvider getLayers
      * @param string $formLayerClass
@@ -61,7 +63,7 @@ class EntityFormLayerTest extends TestCase
          * @var Node|Model $node
          */
         $node = new $entityClass();
-        if ($useMethod){
+        if ($useMethod) {
             $node->setCreatedAt(new DateTime('01.01.1970'))
                 ->setId(1)->setContent('Test content');
         } else {
@@ -82,6 +84,7 @@ class EntityFormLayerTest extends TestCase
         $layer->update();
         $this->assertEquals(new DateTime('02.01.1970'), $useMethod ? $node->getCreatedAt() : $node->createdAt);
     }
+
     /**
      * @dataProvider getLayers
      * @param string $formLayerClass
@@ -102,7 +105,8 @@ class EntityFormLayerTest extends TestCase
         $this->assertNotSame($node, $layer->create(true));
     }
 
-    public function getLayers(){
+    public function getLayers()
+    {
         yield [
             NodeFormLayer::class,
             Node::class,

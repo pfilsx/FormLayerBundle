@@ -56,6 +56,7 @@ abstract class EntityFormLayer implements FormLayerInterface
         $this->update();
         return $this->entity;
     }
+
     /**
      * @inheritDoc
      */
@@ -87,6 +88,7 @@ abstract class EntityFormLayer implements FormLayerInterface
             }
         }
     }
+
     /**
      * Saves data into associated entity
      */

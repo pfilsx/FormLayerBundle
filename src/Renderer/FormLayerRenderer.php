@@ -23,7 +23,7 @@ class FormLayerRenderer
     {
         $this->generator->generateClass(
             $formClassDetails->getFullName(),
-            __DIR__.'/../Resources/skeleton/FormLayer.tpl.php',
+            __DIR__ . '/../Resources/skeleton/FormLayer.tpl.php',
             [
                 'bounded_full_class_name' => $boundClassDetails ? $boundClassDetails->getFullName() : null,
                 'bounded_class_name' => $boundClassDetails ? $boundClassDetails->getShortName() : null,

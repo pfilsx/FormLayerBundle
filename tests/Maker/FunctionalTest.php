@@ -23,7 +23,7 @@ class FunctionalTest extends KernelTestCase
 
     protected function setUp(): void
     {
-        $this->app_path = dirname(__DIR__).'/app';
+        $this->app_path = dirname(__DIR__) . '/app';
         parent::setUp();
     }
 

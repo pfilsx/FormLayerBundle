@@ -67,7 +67,9 @@ class MakeFormLayer extends AbstractMaker
             $argument = $command->getDefinition()->getArgument('bound-class');
             $entities = $this->entityHelper->getEntitiesForAutocomplete();
             $question = new Question($argument->getDescription());
-            $question->setValidator(function ($answer) use ($entities) {return Validator::existsOrNull($answer, $entities); });
+            $question->setValidator(function ($answer) use ($entities) {
+                return Validator::existsOrNull($answer, $entities);
+            });
             $question->setAutocompleterValues($entities);
             $question->setMaxAttempts(3);
             $input->setArgument('bound-class', $io->askQuestion($question));
@@ -94,7 +96,7 @@ class MakeFormLayer extends AbstractMaker
             );
             $doctrineMetadata = $this->entityHelper->getMetadata($boundClassDetails->getFullName());
             if ($doctrineMetadata instanceof ClassMetadata) {
-                foreach ($doctrineMetadata->getFieldNames() as $fieldName){
+                foreach ($doctrineMetadata->getFieldNames() as $fieldName) {
                     $formFields[] = $fieldName;
                 }
                 foreach ($doctrineMetadata->associationMappings as $fieldName => $relation) {
