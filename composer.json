@@ -1,0 +1,50 @@
+{
+    "name": "pfilsx/form-layer-bundle",
+    "description": "Provides additional functional to follow rule \"An entity should be always valid\" with forms validation for your Symfony project",
+    "type": "symfony-bundle",
+    "keywords": [
+        "form",
+        "symfony",
+        "symfony4",
+        "symfony5",
+        "bundle",
+        "entity",
+        "orm",
+        "doctrine"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Filimonov",
+            "email": "pfilsx@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.1",
+        "symfony/framework-bundle": "^3.4|^4.0|^5.0",
+        "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+        "symfony/console": "^3.4|^4.0|^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "phpunit/php-code-coverage": "^7.0",
+        "symfony/maker-bundle": "*",
+        "symfony/phpunit-bridge": "^5.0",
+        "symfony/process": "^3.4|^4.0|^5.0",
+        "symfony/validator": "^3.4|^4.0|^5.0",
+        "symfony/yaml": "^3.4|^4.0|^5.0",
+        "symfony/routing": "^3.4|^4.0|^5.0",
+        "symfony/orm-pack": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pfilsx\\FormLayer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pfilsx\\FormLayer\\Tests\\": "tests"
+        }
+    }
+}

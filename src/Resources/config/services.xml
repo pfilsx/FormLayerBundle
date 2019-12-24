@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="form_layer.renderer.class">Pfilsx\FormLayer\Renderer\FormLayerRenderer</parameter>
+        <parameter key="form_layer.maker.class">Pfilsx\FormLayer\Maker\MakeFormLayer</parameter>
+    </parameters>
+
+    <services>
+        <service id="form_layer.renderer.form_layer_renderer" class="%form_layer.renderer.class%">
+            <argument type="service" id="maker.generator" />
+        </service>
+
+        <service id="form_layer.maker.make_form_layer" class="%form_layer.maker.class%">
+            <argument type="service" id="maker.doctrine_helper" />
+            <argument type="service" id="form_layer.renderer.form_layer_renderer" />
+            <tag name="maker.command" />
+        </service>
+    </services>
+</container>
